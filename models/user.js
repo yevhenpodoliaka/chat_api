@@ -18,7 +18,11 @@ const userSchema = new mongoose.Schema(
       required: [true, "Email is required"],
       unique: true,
     },
-
+    userPosts: {
+      type: Array,
+      default: [],
+      ref: "post",
+    },
     token: {
       type: String,
       default: null,

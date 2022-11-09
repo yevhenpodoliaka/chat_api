@@ -5,6 +5,7 @@ import logger from "morgan"
 
 import authRouter from "./routes/auth.js"
 import usersRouter from "./routes/users.js"
+import postsRouter from "./routes/posts.js"
 
 
 const app = express()
@@ -14,6 +15,7 @@ app.use(express.json())
 
 app.use("/api/auth", authRouter);
 app.use("/api/users", usersRouter);
+app.use("/api/posts", postsRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
